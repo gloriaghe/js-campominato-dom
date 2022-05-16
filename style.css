@@ -22,9 +22,7 @@ h1{
 h2{
     margin: 25px 0;
 }
-/* .square {
-    border: 1px solid black;
-} */
+
 
 .square1 {
     width: calc(100% / 10);

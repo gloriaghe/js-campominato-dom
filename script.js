@@ -59,6 +59,7 @@ IniziaGioco.addEventListener("click",
 
 
         sectionNone.className = "none";
+        let punti = 0;
 
         for (let i = 0; i < myNewRandom.length; i++) {
             const crea = createmyElement("div", classAggiuta);
@@ -66,22 +67,15 @@ IniziaGioco.addEventListener("click",
             crea.append(arrmyItem);
             crea.addEventListener("click",
                 () => {
-            debugger;
-                for (i = 0; i< myNewRandom.length; i++)  {
-                        if (myNewRandom.includes(MyBomb[i])) {
+                        if (MyBomb.includes(arrmyItem)) {
                             crea.classList.add("squareBomba");
+                            window.alert("Hai fatto " + punti + " punti");
                         } else {
                             crea.classList.add("squareClick");
-
+                            punti+=10;
+                            
                         }
-                    } 
                     
-                    //      if (myNewRandom == MyBomb[i]){
-                    //          crea.classList.add("squareBomba");
-                    //      } else {
-                    //          crea.classList.add("squareClick");
-
-                    //      }
                 }
             )
             grid.append(crea);
