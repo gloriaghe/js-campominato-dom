@@ -53,8 +53,8 @@ IniziaGioco.addEventListener("click",
 
 
         const myNewRandom = creaRandomNum(numCelle, 1, numCelle);
-        const MyBomb = creaRandomNum(16, 1, numCelle);
         console.log(myNewRandom);
+        const MyBomb = creaRandomNum(16, 1, numCelle);
         console.log(MyBomb);
 
 
@@ -65,15 +65,24 @@ IniziaGioco.addEventListener("click",
             let arrmyItem = myNewRandom[i];
             crea.append(arrmyItem);
             crea.addEventListener("click",
-            () => {
-               
-                 if (myNewRandom == MyBomb[i]){
-                     crea.classList.add("squareBomba");
-                 } else {
-                     crea.classList.add("squareClick");
+                () => {
+            debugger;
+                for (i = 0; i< myNewRandom.length; i++)  {
+                        if (!myNewRandom.includes(MyBomb[i])) {
+                            crea.classList.add("squareBomba");
+                        } else {
+                            crea.classList.add("squareClick");
 
-                 }
-            }
+                        }
+                    } 
+                    
+                    //      if (myNewRandom == MyBomb[i]){
+                    //          crea.classList.add("squareBomba");
+                    //      } else {
+                    //          crea.classList.add("squareClick");
+
+                    //      }
+                }
             )
             grid.append(crea);
         }
