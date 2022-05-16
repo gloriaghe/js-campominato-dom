@@ -45,8 +45,7 @@ InizaGioco.addEventListener("click",
         if (1 === inpuntUserParseInt) {
             for (let i = 0; i < 100; i++){
                 const crea100 =  createmyElement("div", "square1 square");
-                let arrmyItem = numUno100[i];
-                crea100.append(arrmyItem);
+                crea100.append(numUno100[i]);
                 crea100.addEventListener("click", 
                     function () {
                             if (numUno100[i] === bombe100[i]) {
@@ -65,7 +64,7 @@ InizaGioco.addEventListener("click",
                 crea81.append(numUno81[i]);
                 crea81.addEventListener("click",
                     function () {
-                        if (numUno81[i] === bombe81[i]) {
+                        if (arrmyItem[i] === bombe81[i]) {
                             crea81.classList.add("squareBomba")
                         } else {
                             crea81.classList.add("squareClick")
