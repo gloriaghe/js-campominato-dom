@@ -68,7 +68,7 @@ IniziaGioco.addEventListener("click",
                 () => {
             debugger;
                 for (i = 0; i< myNewRandom.length; i++)  {
-                        if (!myNewRandom.includes(MyBomb[i])) {
+                        if (myNewRandom.includes(MyBomb[i])) {
                             crea.classList.add("squareBomba");
                         } else {
                             crea.classList.add("squareClick");
