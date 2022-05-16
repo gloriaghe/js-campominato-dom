@@ -55,8 +55,15 @@ h3{
 
 .squareBomba {
     background-color: red;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
 .none {
     display: none;
+}
+
+.bomba {
+    width: 30%;
 }

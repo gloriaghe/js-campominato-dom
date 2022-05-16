@@ -70,6 +70,14 @@ IniziaGioco.addEventListener("click",
                         if (MyBomb.includes(arrmyItem)) {
                             crea.classList.add("squareBomba");
                             document.querySelector("h3").innerHTML = "Hai fatto " + punti + " punti";
+
+                            // immagine bomba
+                            var image = document.createElement("img");
+                            var imageParent = document.querySelector(".squareBomba");
+                            image.className = "bomba";
+                            image.src = "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR_c8IrL7efa3lCv4FXwTKD75_oA7-fFXzQig&usqp=CAU";
+                            imageParent.appendChild(image);
+                            
                         } else {
                             crea.classList.add("squareClick");
                             punti+=10;
