@@ -69,7 +69,7 @@ IniziaGioco.addEventListener("click",
                 () => {
                         if (MyBomb.includes(arrmyItem)) {
                             crea.classList.add("squareBomba");
-                            window.alert("Hai fatto " + punti + " punti");
+                            document.querySelector("h3").innerHTML = "Hai fatto " + punti + " punti";
                         } else {
                             crea.classList.add("squareClick");
                             punti+=10;

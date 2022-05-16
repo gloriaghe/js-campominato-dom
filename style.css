@@ -22,7 +22,11 @@ h1{
 h2{
     margin: 25px 0;
 }
-
+h3{
+    font-size: 30px;
+    margin: 20px 0;
+    text-align: center;
+}
 
 .square1 {
     width: calc(100% / 10);
