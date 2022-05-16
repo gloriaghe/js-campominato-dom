@@ -4,23 +4,14 @@ let randommynum = (min, max) => Math.floor(Math.random() * (max - min + 1)) + mi
 // funzione genera numeri da 1 a tot tutti diversi
 function creaRandomNum(maxRange, min, max) {
     const arreyInt = [];
-    while (arreyInt.length < maxRange){
+    while (arreyInt.length < maxRange) {
         let RandomNumInt = randommynum(min, max);
-        if (!arreyInt.includes(RandomNumInt)){
+        if (!arreyInt.includes(RandomNumInt)) {
             arreyInt.push(RandomNumInt);
         }
     }
     return arreyInt;
 }
-
-const numUno100 = creaRandomNum(100, 1, 100);
-console.log(numUno100);
-const numUno81 = creaRandomNum(81, 1, 81);
-const numUno49 = creaRandomNum(49, 1, 49);
-const bombe100 = creaRandomNum(16, 1, 100);
-console.log(bombe100);
-const bombe81 = creaRandomNum(16, 1, 81);
-const bombe49 = creaRandomNum(16, 1, 49);
 
 
 // creare blocchetti tramite js
@@ -31,65 +22,53 @@ const createmyElement = (elemAggiuto, classAggiuta) => {
 }
 
 const inputUser = document.querySelector("input");
-const InizaGioco = document.querySelector("button");
+const IniziaGioco = document.querySelector("button");
 const GridPagina = document.getElementById("grid");
 const sectionNone = document.querySelector("header");
 
+//scelta utente
 //iniza gioco al click
-InizaGioco.addEventListener("click",
-    function() {
+IniziaGioco.addEventListener("click",
+    function () {
+        let numCelle, classAggiuta;
+
+        const chooseLevel = parseInt(inputUser.value);
+        switch (chooseLevel) {
+
+            case 1:
+            default:
+                numCelle = 100;
+                classAggiuta = "square1";
+                break;
+
+            case 2:
+                numCelle = 81;
+                classAggiuta = "square2";
+                break;
+
+            case 3:
+                numCelle = 49;
+                classAggiuta = "square3";
+        }
+
+
+        const myNewRandom = creaRandomNum(numCelle, 1, numCelle);
+        console.log(myNewRandom);
+
+
         sectionNone.className = "none";
 
-        inpuntUserParseInt = parseInt(inputUser.value);
-
-        if (1 === inpuntUserParseInt) {
-            for (let i = 0; i < 100; i++){
-                const crea100 =  createmyElement("div", "square1 square");
-                crea100.append(numUno100[i]);
-                crea100.addEventListener("click", 
-                    function () {
-                            if (numUno100[i] === bombe100[i]) {
-                                crea100.classList.add("squareBomba")
-                            } else {
-                                crea100.classList.add("squareClick")
-                            }
-                        }
-                )
-                grid.append(crea100);
-
+        for (let i = 0; i < myNewRandom.length; i++) {
+            const crea = createmyElement("div", classAggiuta);
+            let arrmyItem = myNewRandom[i];
+            crea.append(arrmyItem);
+            crea.addEventListener("click",
+            () => {
+                crea.classList.add("squareClick");
             }
-        } else if (inpuntUserParseInt === 2){
-            for (let i = 0; i < 81; i++){
-                const crea81 = createmyElement("div", "square2 square");
-                crea81.append(numUno81[i]);
-                crea81.addEventListener("click",
-                    function () {
-                        if (arrmyItem[i] === bombe81[i]) {
-                            crea81.classList.add("squareBomba")
-                        } else {
-                            crea81.classList.add("squareClick")
-                        }
-                    }
             )
-                grid.append(crea81);
-            }
-        } else if (inpuntUserParseInt === 3){
-            for (let i = 0; i < 49; i++){
-                const crea49 =  createmyElement("div", "square3 square");
-                crea49.append(numUno49[i]);
-                crea49.addEventListener("click",
-                    function () {
-                        if (numUno49[i] === bombe49[i]) {
-                            crea49.classList.add("squareBomba")
-                        } else {
-                            crea49.classList.add("squareClick")
-                        }
-                    }
-                )
-                grid.append(crea49);
-
-            }
+            grid.append(crea);
         }
+
     }
 )
-  
