@@ -49,9 +49,9 @@ InizaGioco.addEventListener("click",
                 crea100.append(arrmyItem);
                 crea100.addEventListener("click", 
                     function () {
-                            if (bombe100[i] === numUno100[i]) {
+                            if (numUno100[i] === bombe100[i]) {
                                 crea100.classList.add("squareBomba")
-                            } else if (bombe100[i] != numUno100[i]){
+                            } else {
                                 crea100.classList.add("squareClick")
                             }
                         }
@@ -65,9 +65,9 @@ InizaGioco.addEventListener("click",
                 crea81.append(numUno81[i]);
                 crea81.addEventListener("click",
                     function () {
-                        if (bombe81[i] === numUno81[i]) {
+                        if (numUno81[i] === bombe81[i]) {
                             crea81.classList.add("squareBomba")
-                        } else if (bombe81[i] != numUno81[i]){
+                        } else {
                             crea81.classList.add("squareClick")
                         }
                     }
@@ -80,9 +80,9 @@ InizaGioco.addEventListener("click",
                 crea49.append(numUno49[i]);
                 crea49.addEventListener("click",
                     function () {
-                        if (bombe49[i] === numUno49[i]) {
+                        if (numUno49[i] === bombe49[i]) {
                             crea49.classList.add("squareBomba")
-                        } else if (bombe49[i] != numUno49[i]){
+                        } else {
                             crea49.classList.add("squareClick")
                         }
                     }
